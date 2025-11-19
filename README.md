@@ -71,7 +71,11 @@ The repository currently contains (examples):
 - `7_research_papers/` — curated paper notes and summaries
 - `8_quantum_computing_and_ai/` — topical notes
 - `9_blockchain_and_ai/` — topical notes
-- `10_behavioral_and_leadership/` — interview behavioral guidance and leadership
+- `10_software_engineering/` — software engineering principles, design patterns, testing
+- `11_ui_ux/` — UI/UX principles for AI engineers
+- `12_behavioral_and_leadership/` — interview behavioral guidance and leadership
+- `13_distributed_systems/` — distributed training, parameter servers, consensus
+- `14_databases/` — vector dbs, sql, nosql, consistency models
 
 Subfolders often contain numbered folders (for ordering). Files should live inside the folder that best represents the topic area.
 

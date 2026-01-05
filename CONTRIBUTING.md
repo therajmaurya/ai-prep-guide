@@ -35,6 +35,25 @@ The process is straightforward:
 5.  **Push** your work back to your fork.
 6.  **Submit a Pull Request** so that we can review your changes.
 
+## Taxonomy & Definitions
+
+To keep topics consistent and searchable, we use strict definitions for **Categories** and **Experience Levels**.
+
+### Category Meanings
+*   **must**: Core knowledge every practitioner working in that area *should* have (e.g., linear algebra basics, training loop mechanics).
+*   **good-to-know**: Helpful extensions or common practices that make engineers more effective but are not strictly required (e.g., advanced regularization, specific data augmentation).
+*   **specialisation**: Deep, domain-specific, or role-specific knowledge (e.g., few-shot prompting research, model parallelism internals).
+
+### Experience-Level Expectations
+Use these as guidance when tagging `levels` and authoring questions:
+
+*   **mid** (~5y exp): Solid practitioner. Can implement end-to-end models, debug training, and write production code.
+    *   *Focus*: Coding, model internals, evaluation, data cleaning.
+*   **senior** (~10y exp): Owns design/delivery of full ML systems. Makes tradeoffs across accuracy, latency, cost.
+    *   *Focus*: System design, experiment design/rollout, mentoring, reproducible research.
+*   **principal** (15y+ exp): Strategy, system-of-systems design, risk/regulatory decisions, org-level roadmaps.
+    *   *Focus*: Platform strategy, compliance, cross-team MLOps, shaping research directions.
+
 ## Content Standards & Style Guide
 
 ### Topic Structure (The "Golden Rule")

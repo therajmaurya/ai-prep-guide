@@ -46,6 +46,10 @@ Implement a multi-layer perceptron (MLP) from scratch using only NumPy.
 Implement Principal Component Analysis using SVD without `sklearn`.
 *   **Goal**: Visualize the variance explained by top K components on the MNIST dataset.
 
+### Project 3: SVD Image Compression
+Use Singular Value Decomposition to compress a grayscale image.
+*   **Goal**: Reconstruct the image using only the top $k$ singular values and visualize the quality vs size trade-off.
+
 ## 🗣️ Interview Questions
 
 ### Mid-Level

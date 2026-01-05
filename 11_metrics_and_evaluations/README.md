@@ -40,6 +40,10 @@ Train a classifier on a highly imbalanced dataset (e.g., Credit Card Fraud, 99.9
 Use `RAGAS` to evaluate a simple Wiki-Chatbot.
 *   **Goal**: Generate a synthetic test set (Questions, Ground Truths) and run evaluation metrics.
 
+### Project 3: Fairness Audit
+Take a pre-trained model (e.g., for hiring or credit scoring) and run an error analysis on different subgroups (gender, age).
+*   **Goal**: Calculate "Demographic Parity" and "Equalized Odds" metrics. Propose a mitigation strategy (re-weighting or post-processing).
+
 ## 🗣️ Interview Questions
 
 ### Mid-Level

@@ -15,6 +15,18 @@ Unlike generic "data science" roadmaps, this guide focuses on the **engineering 
 *   **Depth**: Going beyond `.fit()` to understand training dynamics and internals.
 *   **Production**: MLOps, evaluation, safety, and trade-offs.
 
+## 🧠 Core Competencies (Senior+)
+
+What should a Senior/Principal AI Engineer master?
+
+*   **Mathematical Foundations**: Linear algebra, probability & statistics, optimization, and information theory intuition.
+*   **ML Fundamentals**: Supervised/unsupervised methods, regularization, bias/variance, feature engineering.
+*   **Deep Learning**: Architectures (CNN, RNN, Transformer), training dynamics, regularization, transfer learning.
+*   **Generative AI**: Transformers, attention, diffusion models, autoregressive models, fine-tuning, and prompting.
+*   **System Design**: Model serving, deployment, monitoring, data pipelines, varying latency/cost/throughput tradeoffs.
+*   **MLOps & Infra**: Feature stores, experiment tracking, model registry, observability, online vs batch predictions.
+*   **Leadership**: Prioritization, tradeoff reasoning, mentoring, cross-functional design, security & privacy.
+
 ## 📚 Curriculum & Study Packs
 
 The repository is organized by topic. Click on a folder to explore the curriculum, resources, and practice exercises for that area.
@@ -48,6 +60,17 @@ The repository is organized by topic. Click on a folder to explore the curriculu
 
 ---
 
+## 💡 Project Ideas (Micro to Large)
+
+Use these to build your portfolio.
+
+*   **Micro**: Build a classification model and deploy it as a serverless endpoint (AWS Lambda/Modals) with monitoring.
+*   **Small**: End-to-end text classification with a Transformer. Include dataset curation, training, evaluation, thresholding, and deployment.
+*   **Medium**: Retrieval-Augmented Generation (RAG) system. Index internal docs, build a retriever (FAISS), reranker, LLM synthesis, and caching.
+*   **Large**: Multimodal search engine (image + text) with feature extraction, embedding store, ANN search, and a web UI.
+
+**Checklist for each project**: Problem statement, Data collection, Baselines, Deployment plan (scale/cost), Observability.
+
 ## 🗺️ Roadmap (Example 8-Week Plan)
 
 | Phase | Duration | Focus Area | Key Topics |
@@ -56,6 +79,15 @@ The repository is organized by topic. Click on a folder to explore the curriculu
 | **II** | Weeks 3-4 | **Deep Learning** | Neural Net internals, Backprop, CNNs, RNNs, Training dynamics. |
 | **III** | Weeks 5-6 | **GenAI & LLMs** | Transformers, Attention, Fine-tuning, PEFT, RAG. |
 | **IV** | Weeks 7-8 | **Production** | System Design, MLOps, Deploying & Scaling, Mock Interviews. |
+
+## ✅ Mock Interview Checklist
+
+For every mock interview:
+
+*   **Structure (45 min)**: 10m clarifying questions, 25m design/solution, 10m tradeoffs & deep-dive.
+*   **Communication**: Verbalize tradeoffs (e.g., Latency vs Accuracy, Cost vs Complexity).
+*   **System Design**: Component diagram, Data flow, API definitions, Scale estimation.
+*   **Post-Mock**: Write a 1-page design doc and a prioritized implementation plan.
 
 ## 🛠️ How to Use This Repo
 

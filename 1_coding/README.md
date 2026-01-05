@@ -41,6 +41,10 @@ Write a custom `Dataset` and `DataLoader` in pure Python that reads efficiently 
 ### Project 3: Profiling Hunt
 Take a deliberately slow model training script (add random sleeps or use unoptimized tensor ops) and use PyTorch Profiler to identify and fix the bottlenecks.
 
+### Quiz: Efficient Vector Similarity
+**Constraint**: Implement a function to compute pairwise cosine similarity between two large sets of vectors `A` (MxD) and `B` (NxD) **without using a for-loop**.
+*   **Hint**: Use broadcasting and matrix multiplication (`A @ B.T`). Watch out for memory usage if M and N are huge!
+
 ## 🗣️ Interview Questions
 
 ### Mid-Level

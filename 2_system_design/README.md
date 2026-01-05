@@ -5,7 +5,10 @@ levels: ["mid", "senior", "principal"]
 skills: [architecture, scalability, trade-offs, serving, monitoring]
 questions:
   "mid": ["Design a system to classify images uploaded by users in real-time."]
-  "senior": ["Design a YouTube-like video recommendation system. Handle 1B+ users."]
+  "senior": [
+    "Design a YouTube-like video recommendation system. Handle 1B+ users.",
+    "Design an LLM-based customer support agent for multi-tenant SaaS. Discuss prompt routing, caching, and safety."
+  ]
   "principal": ["Design a global, multi-region feature store for a financial trading platform with <10ms latency."]
 ---
 
@@ -39,6 +42,10 @@ Build a simple API using FastAPI that serves a SciKit-Learn model.
 ### Project 2: Feature Store Simulation
 Implement a basic "Feature Store" using Redis (online) and Parquet/S3 (offline).
 *   **Goal**: Write a script to "materialize" features from offline to online store.
+
+### Project 3: Multimodal Inference System
+Design a low-latency inference system for a model that takes both Image and Text as input.
+*   **Goal**: Produce a component diagram focusing on the "pre-processing" (image resizing) vs "model inference" split. Discuss where to run the image processing (CPU vs GPU).
 
 ## 🗣️ Interview Questions
 

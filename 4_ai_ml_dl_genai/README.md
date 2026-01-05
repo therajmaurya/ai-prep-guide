@@ -31,10 +31,17 @@ This is the heart of the guide. It covers the progression from classical ML to t
 
 *   [**Deep Learning Book**](https://www.deeplearningbook.org/) - The bible by Goodfellow et al.
 *   [**The Annotated Transformer**](https://nlp.seas.harvard.edu/2018/04/03/attention.html) - Line-by-line code walk-through.
+*   [**Stanford CS231n (Vision) & CS224n (NLP)**](http://cs231n.stanford.edu/) - The gold standard academic courses.
+*   [**Hands-On Machine Learning**](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) - Great for classical ML foundations.
 *   [**Fast.ai**](https://www.fast.ai/) - Practical Deep Learning for Coders.
 *   [**Lilian Weng's Blog**](https://lilianweng.github.io/) - In-depth technical posts on LLMs and Agents.
 
 ## 🛠️ Practice
+
+### Project 0: The Classics (NumPy Only)
+Build a regularized Logistic Regression and a K-Nearest Neighbors classifier from scratch using **only NumPy**.
+*   **Goal**: Implement the forward pass, loss derivation, and backward pass (gradient update) manually.
+*   **Why**: If you can't derive the gradient for LogReg, you won't understand how Llama-3 is trained.
 
 ### Project 1: Transformer from Scratch
 Implement a mini-GPT model in PyTorch following the "Attention is All You Need" paper structure.

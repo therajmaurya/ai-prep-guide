@@ -28,6 +28,7 @@ Models are useless if they stay in notebooks. MLOps is the art of shipping model
 *   [**MLOps.org**](https://mlops.org/) - General principles.
 *   [**Full Stack Deep Learning**](https://fullstackdeeplearning.com/) - Excellent course on the tooling landscape.
 *   [**Kubernetes for Machine Learning**](https://www.kubeflow.org/) - Kubeflow documentation.
+*   **Engineering Blogs**: [Uber Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/), [Google TFX](https://www.tensorflow.org/tfx), [LinkedIn Feathr](https://engineering.linkedin.com/blog/2022/open-sourcing-feathr).
 
 ## 🛠️ Practice
 

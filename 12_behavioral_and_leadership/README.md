@@ -59,7 +59,13 @@ Write a design doc proposing a major architectural change (e.g., "Migration from
     1.  **Identify**: Identify the key stakeholders and their interests.
     2.  **Communicate**: Clearly communicate the benefits and risks of the proposed change.
     3.  **Negotiate**: Be open to compromise and be willing to listen to their concerns.
+    3.  **Negotiate**: Be open to compromise and be willing to listen to their concerns.
     4.  **Follow up**: Follow up with stakeholders to ensure they are satisfied with the outcome.
+*   **Q**: Tell me about a time you had to choose between shipping a model with known limitations vs delaying for more research.
+*   **A**:
+    1.  **Framework**: Quantify the risk of the limitation (e.g., "It fails on 5% of edge cases") vs the business cost of delay.
+    2.  **Action**: I shipped the model but added a "Guardrail" (heuristic fallback) for the known failure mode and logged every occurrence.
+    3.  **Result**: We got value to customers 2 weeks early, and I used the logs to fix the edge case in v2.
 
 ### Principal-Level
 *   **Q**: You discover that the model regulating credit limits is biased against a certain demographic. The product launch is tomorrow. What do you do?

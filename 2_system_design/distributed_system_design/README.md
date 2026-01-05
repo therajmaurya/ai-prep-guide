@@ -45,6 +45,14 @@ How do nodes agree on a value (e.g., who is the leader)?
 *   **Strong Consistency**: Everyone sees the same data at the same time (Paxos/Raft). Slow.
 *   **Eventual Consistency**: Everyone will eventually see the same data (Gossip). Fast.
 *   **Causal Consistency**: If A causes B, everyone sees A before B.
+*   **CAP Theorem**: Pick two of Consistency, Availability, Partition Tolerance. (In reality, P is mandatory, so pick CP or AP).
+
+### 3. Scaling Vector Databases (New for AI)
+*   **IVF-PQ (Inverted File with Product Quantization)**: Approximate Nearest Neighbor.
+*   **Sharding**:
+    *   **By ID**: Good for point lookups.
+    *   **By Clustering**: Group similar vectors on the same node (reduces search scope).
+*   **Replication**: For high QPS read throughput.
 
 ### 3. Failure Detection
 *   **Heartbeats**: Nodes send "I'm alive" signals.

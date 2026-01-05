@@ -27,8 +27,16 @@ questions:
     *   **Concept Drift**: $P(y|X)$ changes (the world changes).
     *   **Methods**: K-S Test, PSI (Population Stability Index), KL Divergence.
 
-* Service Level Objectives (SLOs) and SLIs.
-* Distributed Tracing.
+*   **Service Level Objectives (SLOs) and SLIs**.
+*   **Distributed Tracing (OpenTelemetry)**:
+    *   Standard for generating and collecting telemetry data.
+    *   **Context Propagation**: Passing a `TraceID` across microservices (API -> Vector DB -> LLM).
+    *   **Spans**: Individual units of work (e.g., "DB Query: 50ms").
+
+### 4. LLM Observability
+*   **Token Counters**: Input vs Output tokens (different costs).
+*   **Latency Breakdown**: TTFT (Time To First Token) vs TBT (Time Between Tokens).
+*   **Cost Monitoring**: Real-time $ tracking per tenant.
 
 ## 📚 Resources
 

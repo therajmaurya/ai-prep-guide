@@ -52,12 +52,16 @@ questions:
     *   **FID (Fréchet Inception Distance)**: Measures distance between feature distributions of real and generated images. Lower is better.
     *   **IS (Inception Score)**: Measures quality and diversity.
 
-### 3. RAG Evaluation
-*   **RAGAS**: Framework for evaluating RAG pipelines.
-    *   **Faithfulness**: Is the answer derived from the context?
-    *   **Answer Relevance**: Does the answer address the query?
-    *   **Context Precision**: Is the retrieved context relevant?
-    *   **Context Recall**: Is the relevant context retrieved?
+### 3. RAG Evaluation (RAGAS)
+*   **Faithfulness**: (GenAI) Is the answer derived *only* from the context? (Hallucination check).
+*   **Answer Relevance**: (GenAI) Does the answer address the query?
+*   **Context Precision**: (Retrieval) Is the *relevant* chunk ranked at the top?
+*   **Context Recall**: (Retrieval) Did we retrieve the ground truth chunk?
+
+### 4. Code Generation Metrics
+*   **Pass@k**: Generate $k$ solutions. If *any* of them passes the unit tests, it's a success.
+    *   $Pass@k = 1 - \frac{\binom{n-c}{k}}{\binom{n}{k}}$ where $n$ is total samples, $c$ is correct samples.
+*   **Bleu code**: Not recommended. Code can be correct but syntactically different.
 
 
 ## 📚 Resources

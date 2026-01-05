@@ -50,6 +50,16 @@ Continuous Integration/Continuous Deployment is the backbone of modern software 
 *   Managing infrastructure (servers, DBs, networks) using code (Terraform, CloudFormation).
 *   Version controlled, reproducible, auditable.
 
+*   Managing infrastructure (servers, DBs, networks) using code (Terraform, CloudFormation).
+*   **GitOps (ArgoCD)**:
+    *   Git repository is the "Single Source of Truth".
+    *   **Pull Mechanism**: Agent inside cluster pulls state from Git. Security benefit: Cluster doesn't need external access, only needs to pull from Git.
+
+### 4. Model Registry
+*   Central store for model artifacts and metadata.
+*   **MLflow / WandB**: Tracks parameters, metrics, and artifacts (`model.pkl`).
+*   **Stage Transitions**: `Staging` -> `Production` (Triggered by CD pipeline).
+
 ## Interview Questions
 
 ### Mid Level

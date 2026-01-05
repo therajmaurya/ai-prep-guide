@@ -16,6 +16,21 @@ Complexity: O(n) to O(n log n) if sorting required.
 
 Tip: When you see "sorted" or "pairs/triplets" look for two-pointer. Be careful with duplicate handling and in-place index updates.
 
+```python
+# Template: 2-Sum Sorted
+def two_sum_sorted(arr, target):
+    left, right = 0, len(arr) - 1
+    while left < right:
+        curr = arr[left] + arr[right]
+        if curr == target:
+            return [left, right]
+        if curr < target:
+            left += 1
+        else:
+            right -= 1
+    return []
+```
+
 ---
 
 ## 2. Sliding Window
@@ -27,6 +42,28 @@ Typical problems: longest substring without repeating characters, min subarray s
 Complexity: O(n) usually.
 
 Tip: Distinguish between fixed-size and variable-size window problems. Use frequency maps for variable windows.
+
+```python
+# Template: Variable Size Window
+def sliding_window(s):
+    left = 0
+    longest = 0
+    window = {} # or set()
+    
+    for right in range(len(s)):
+        # Add s[right] to window
+        char = s[right]
+        window[char] = window.get(char, 0) + 1
+        
+        # Contract window if invalid
+        while window[char] > 1: # Example condition: distinct chars
+            left_char = s[left]
+            window[left_char] -= 1
+            left += 1
+            
+        longest = max(longest, right - left + 1)
+    return longest
+```
 
 ---
 

@@ -20,7 +20,9 @@ Writing "Pythonic" AI code means thinking in Tensors.
 *   **Vectorization**: Replacing explicit for-loops with array operations. Exploits SIMD instructions on CPU and parallel cores on GPU.
 *   **Einstein Summation (`einsum`)**: A domain-specific language for tensor contractions.
     *   `torch.einsum('ik,kj->ij', A, B)` is Matrix Multiplication.
+    *   `torch.einsum('ik,kj->ij', A, B)` is Matrix Multiplication.
     *   `torch.einsum('ii->', A)` is Trace.
+    *   `torch.einsum('bhid,bhjd->bhij', Q, K)` is Multi-Head Attention Score calculation.
     *   `torch.einsum('bij,bjk->bik', A, B)` is Batch Matrix Multiplication.
 *   **Views vs Copies**: Understanding `contiguous()` memory. Use `reshape()` with care.
 *   **Standard Training Loops**: Forward, Loss, Backward, Step.
@@ -36,9 +38,13 @@ Implement Dot Product, Outer Product, Matrix Mul, and Attention mechanism using 
 ### Project 2: Broadcasting Visualization
 Create a visual explainer (using Matplotlib) of how a `(3, 1)` array adds to a `(1, 4)` array to produce a `(3, 4)` array.
 
-### Project 3: Write a reusable training loop class from scratch in python.
+### Project 3: Reusable Training Loop
+Write a class `Trainer` that accepts a `model`, `optimizer`, `loss_fn`, and `dataloader`.
+*   **Goal**: Handle GPU transfer, `model.train()`/`eval()` toggling, and average loss calculation per epoch. Add a `predict` method.
 
-### Project 4: Implement early stopping logic from scratch in python.
+### Project 4: Early Stopping logic
+Implement a class `EarlyStopping` that tracks validation loss.
+*   **Goal**: If loss doesn't improve for `patience` epochs, stop training and restore best weights. Handle `modes` (min/max) and `min_delta` (threshold).
 
 ## 🗣️ Interview Questions
 

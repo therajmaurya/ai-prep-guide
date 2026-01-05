@@ -56,7 +56,15 @@ The base class for all neural network modules.
 *   **Scripting**: `torch.jit.script(model)`. Compiles the model code directly. Supports control flow.
 *   **Benefit**: Decouples model from Python interpreter, allowing execution in C++ (LibTorch) for high-performance inference.
 
-### 3. Custom Autograd Functions
+### 3. PyTorch 2.0 & Optimization
+*   **`torch.compile()`**: The new default for performance. JIT compiles PyTorch code into optimized kernels using **TorchInductor** (OpenAI Triton backend). Can provide 30%+ speedup with one line.
+    ```python
+    model = torch.compile(model)
+    ```
+*   **FlashAttention**: Memory-efficient attention mechanism (tiling to reduce IO). Available via `F.scaled_dot_product_attention()`.
+*   **Mixed Precision (`torch.amp`)**: Use FP16/BF16 to save memory and speed up training on Tensor Cores.
+
+### 4. Custom Autograd Functions
 Extend `torch.autograd.Function` to define custom forward and backward passes. Useful for non-differentiable operations or numerical stability fixes.
 
 ```python
@@ -90,7 +98,9 @@ class MyReLU(torch.autograd.Function):
 2.  **What is the "reparameterization trick" in VAEs and how is it implemented in PyTorch?**
     *   *Answer*: We cannot backpropagate through a random sampling node. The trick expresses the random variable $z$ as $\mu + \sigma \cdot \epsilon$, where $\epsilon \sim N(0, 1)$. This moves the stochasticity to an input node, allowing gradients to flow through $\mu$ and $\sigma$.
 3.  **How would you debug a "CUDA Out of Memory" error?**
-    *   *Answer*: Check batch size, check for accumulated history (e.g., `total_loss += loss` keeps the graph alive; use `loss.item()`), use `torch.cuda.empty_cache()`, or use gradient checkpointing (`torch.utils.checkpoint`) to trade compute for memory.
+    *   *Answer*: Check batch size, check for accumulated history (e.g., `total_loss += loss` keeps the graph alive; use `loss.item()`), use `torch.cuda.empty_cache()`, or use gradient checkpointing (`torch.utils.checkpoint`) to trade compute for memory. Use `nvidia-smi` or `torch.cuda.memory_summary()` to visualize.
+4.  **How does PyTorch 2.0 `torch.compile` work?**
+    *   *Answer*: It captures the PyTorch graph (Dynamo), optimizes it (AOTAutograd), and generates efficient GPU kernels (Triton/Inductor) that fuse operations, matching or beating specialized C++ kernels.
 
 ### Principal Level
 1.  **Design a training pipeline for a trillion-parameter model.**

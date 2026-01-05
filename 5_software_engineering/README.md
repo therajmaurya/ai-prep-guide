@@ -21,7 +21,11 @@ Writing "research code" (Jupyter notebooks) is very different from writing "prod
     *   **Integration Tests**: Checking if the model pipeline runs end-to-end.
     *   **Regression Tests**: Ensuring model performance hasn't degraded.
     *   **Property-Based Testing**: Checking invariants (e.g., probability output sum is always 1.0).
-*   **Design Patterns**: Factory (model creation), Strategy (swapping optimizers), Decorator (logging/timing), and SOLID principles applied to ML.
+*   **Design Patterns for ML**:
+    *   **Strategy Pattern**: Swapping algorithms (e.g., `GreedyDecoder` vs `BeamSearchDecoder`) at runtime.
+    *   **Factory Pattern**: Creating models from config string (`ModelFactory.create("resnet50")`).
+    *   **Adapter Pattern**: Standardizing API for different LLM providers (OpenAI, Anthropic, Local) -> `llm.generate()`.
+    *   **Observer Pattern**: Logging metrics during training (Callbacks).
 *   **Refactoring**: Moving from Notebook -> Script -> Package -> Microservice.
 
 ## 📚 Resources

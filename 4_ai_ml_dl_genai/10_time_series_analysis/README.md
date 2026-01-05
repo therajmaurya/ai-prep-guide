@@ -45,7 +45,13 @@ Time Series forecasting is critical for business (demand planning, stock market,
 *   **Transformers**:
     *   **Temporal Fusion Transformer (TFT)**: State-of-the-art. Handles static covariates (store location), observed inputs (weather), and known future inputs (holidays). Interpretable attention.
 
-### 3. Evaluation Metrics
+### 3. Foundation Models for Time Series
+*   Just like LLMs, but for time series. Zero-shot forecasting.
+*   **TimeGPT**: Transformer trained on 100B+ series.
+*   **Lag-Llama**: Probabilistic foundation model.
+*   **Moirai**: Universal forecasting model by Salesforce.
+
+### 4. Evaluation Metrics
 *   **MAE**: Mean Absolute Error. Robust to outliers.
 *   **RMSE**: Root Mean Squared Error. Penalizes large errors.
 *   **MAPE**: Mean Absolute Percentage Error. Scale-independent. Fails if $y=0$.

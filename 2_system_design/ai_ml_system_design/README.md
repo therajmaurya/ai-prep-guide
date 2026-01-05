@@ -46,6 +46,20 @@ Designing ML systems requires bridging the gap between Data Science (Models) and
 *   **Canary Deployment**: Roll out to 1% of users. Monitor errors.
 *   **A/B Testing**: Split traffic 50/50. Compare business metrics.
 
+### 4. Agentic AI Design
+Designing systems where the LLM takes actions (Calls APIs).
+*   **ReAct Pattern**: Reason + Act. Model outputs a thought, then an action, observes result, then reasons again.
+*   **Memory Systems**: 
+    *   **Short-term**: Context window.
+    *   **Long-term**: Vector DB (RAG) or Summarized history.
+*   **Planning**: Breaking complex goals into sub-tasks (Chain of Density, Tree of Thoughts).
+*   **Guardrails**: Input/Output filtering (NeMo Guardrails, Guardrails AI) to prevent dangerous actions.
+
+### 5. Evaluation Systems (Evals)
+*   **Unit Tests for AI**: Fixed inputs with known good outputs.
+*   **LLM-as-a-Judge**: Using GPT-4 to grade the output of a smaller model (Llama-3).
+*   **RAGAS Metrics**: Faithfulness, Answer Relevance, Context Precision.
+
 ## Interview Questions
 
 ### Senior Level

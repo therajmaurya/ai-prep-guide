@@ -48,7 +48,21 @@ Generative AI focuses on creating new data (images, text, audio) that resembles 
 
 ### 3. Retrieval Augmented Generation (RAG)
 *   Combines parametric memory (LLM weights) with non-parametric memory (Vector DB).
-*   Retrieves relevant chunks based on query embedding and injects them into the context window. Reduces hallucinations.
+
+*   **Naive RAG**: Retrieve top-k chunks -> Stuff in prompt.
+*   **Advanced RAG**:
+    *   **HyDE (Hypothetical Document Embeddings)**: Generate a fake answer, embed that, and search. Better semantic match.
+    *   **Re-ranking**: Retrieve top 50 with cheap vector search, re-rank top 5 with a Cross-Encoder (BERT).
+    *   **Graph RAG**: Using Knowledge Graphs to link entities across chunks.
+
+### 4. Efficient Fine-Tuning (PEFT)
+*   **LoRA (Low-Rank Adaptation)**: Freeze main weights ($W$). Injects trainable low-rank matrices ($A, B$). $W' = W + BA$. Reduces trainable params by 10,000x.
+*   **QLoRA**: LoRA on 4-bit quantized backbones. Fine-tune a 70B model on a single GPU.
+
+### 5. Mixture of Experts (MoE)
+*   Sparse models (e.g., Mixtral 8x7B).
+*   **Router**: Selects top-k experts (FFN blocks) for each token.
+*   **Benefit**: High model capacity (total params) with low inference cost (active params).
 
 ## Interview Questions
 

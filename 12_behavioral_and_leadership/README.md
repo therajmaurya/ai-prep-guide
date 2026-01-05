@@ -19,17 +19,22 @@ As a Senior+ Engineer, your code is only 30% of your impact. The rest is influen
 *   **Strategy**: "Build vs Buy". Knowing when to use an API (OpenAI) vs train a custom model (Llama) is the #1 strategic decision today.
 *   **Ethics & Safety**: Responsible for bias, hallucinations, and deepfakes.
 *   **Stakeholder Management**: Translating "F1 Score" and "Perplexity" into "Revenue" and "Customer Satisfaction" for business stakeholders.
+*   **Managing Up**: Understanding your manager's goals and fears. Proactively communicating risks before they become fires.
+    *   *Tip*: Use 1:1s for strategy, not just status updates.
 
 ## Aspects:
 - STAR Method (Situation, Task, Action, Result).
 - Conflict Resolution.
 - Mentorship and Team Building.
 - Prioritization and Trade-offs.
+- Negotiation (Salary, Timelines, Scope).
 
 ## 📚 Resources
 
 *   [**Staff Engineer: Leadership beyond the management track**](https://staffeng.com/) - Will Larson's book.
+*   [**Staff Engineer: Leadership beyond the management track**](https://staffeng.com/) - Will Larson's book.
 *   [**The Manager's Path**](https://www.oreilly.com/library/view/the-managers-path/9781491973882/) - Useful even for ICs to understand their managers.
+*   [**Never Split the Difference**](https://www.harpercollins.com/products/never-split-the-difference-chris-voss) - Essential negotiation tactics.
 
 ## 🛠️ Practice
 

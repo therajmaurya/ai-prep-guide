@@ -17,11 +17,14 @@ AI apps feel different. They are slow, unpredictable, and conversational.
 
 *   **Streaming**:
     *   **SSE (Server-Sent Events)**: Standard for LLM streaming one-way.
-    *   **WebSockets**: Bi-directional (Voice chat).
+    *   **Vercel AI SDK (`useChat`, `useCompletion`)**: Abstracts away the complexity of decoding the stream and updating React state.
+    *   **WebSockets**: Bi-directional (Voice chat, Realtime updates).
 *   **State Management**:
-    *    Optimistic Updates: Show the message immediately while sending.
+    *   **Optimistic Updates**: Show the user's message immediately while sending.
+    *   **Preserving State**: Keeping chat history alive when navigating away (Persisting to `localStorage` or `IndexedDB`).
 *   **Markdown Rendering**:
-    *   `react-markdown`: Essential for rendering code blocks and tables from LLMs.
+    *   `react-markdown` + `remark-gfm`: Essential for rendering code blocks, tables, and LaTeX from LLMs.
+    *   **Syntax Highlighting**: preventing layout shifts (CLS) when code blocks load.
 
 ## Components
 - Component-based architecture.
@@ -53,4 +56,8 @@ Build a clone of ChatGPT UI using Next.js.
 *   **Q**: How do you handle long-running API calls in React?
 *   **A**: Use `AbortController` to cancel the request when the component unmounts.
 *   **Q**: How does React Fiber work?
-*   **A**: TBD
+*   **A**: React Fiber is the reconciliation engine. It breaks rendering work into chunks (units of work) so it can pause and yield back to the main thread (Time Slicing). This is crucial for keeping high-priority updates (like typing) responsive while rendering low-priority updates (like a large incoming data chart) in the background. It uses a singly linked list tree traversal.
+*   **Q**: React Server Components (RSC) vs Client Components for AI apps?
+*   **A**: 
+    *   **RSC**: Use for fetching the initial prompt data, checking auth, or database calls.
+    *   **Client**: Use for the Chat input, the scrolling list of messages, and anywhere you need standard `useState`/`useEffect` hooks for the streaming response.

@@ -30,6 +30,15 @@ Computer Vision (CV) has transitioned from handcrafted features (SIFT/HOG) to CN
     *   **Contrastive**: SimCLR, MoCo (Push apart different images, pull together augmentations of same image).
     *   **Masked Image Modeling**: MAE (Mask 75% of patches, reconstruct pixels).
 
+### 2. Multimodal Vision (VLM)
+*   **CLIP (Contrastive Language-Image Pre-training)**: Aligns image and text embeddings. Enables Zero-Shot classification ("A photo of a dog").
+*   **LLaVA (Large Language and Vision Assistant)**: Connects a Vision Encoder (CLIP/ViT) to an LLM (Llama) via a projection layer.
+*   **Flamingo**: Interleaved text and image ingestion.
+
+### 3. Foundation Models
+*   **SAM (Segment Anything Model)**: Promptable segmentation (Click to segment). Trained on 1B masks.
+*   **DINOv2**: Self-supervised features that work for depth, segmentation, and retrieval out of the box.
+
 ## 📚 Resources
 
 *   [**CS231n: Convolutional Neural Networks**](http://cs231n.stanford.edu/) - The legendary Stanford course.

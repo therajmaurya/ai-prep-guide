@@ -49,6 +49,17 @@ Representing words as dense vectors where similar words are close in space.
 *   **Sinusoidal**: Fixed sine/cosine functions added to embeddings.
 *   **Learned**: Learnable vectors.
 *   **RoPE (Rotary Positional Embedding)**: Rotates the query/key vectors. Relative position is preserved via rotation. Standard in LLaMA.
+*   **ALiBi (Attention with Linear Biases)**: Biases attention scores based on distance. Extrapolates to longer sequences better than training length.
+
+### 4. Long Context & Efficiency
+*   **FlashAttention**: Reorders Attention computation (Tiling) to minimize HBM (High Bandwidth Memory) reads/writes. Memory linear in sequence length $O(N)$.
+*   **Ring Attention**: Distributed attention across devices for infinite context.
+*   **KV Cache Paging (vLLM)**: Inspired by OS virtual memory. Manages KV cache in non-contiguous blocks to eliminate fragmentation.
+
+### 5. Model Merging
+*   Technique to combine multiple fine-tuned models into one without retraining.
+*   **Model Soups**: Averaging weights of models trained with different hyperparams.
+*   **SLERP**: Spherical Linear Interpolation. Better than simple averaging for maintaining geometry.
 
 ## Interview Questions
 

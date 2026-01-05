@@ -22,9 +22,15 @@ This section bridges the gap between pure "System Design" and "DevOps". It is ab
 *   **Storage Patterns**:
     *   **Object Storage (S3/GCS)**: The Data Lake. Cheap, high throughput, high latency.
     *   **High Performance IO**: Lustre / FSx for Lustre. Needed for distributed training to keep GPUs fed.
-*   **Cost Optimization**:
-    *   **Spot Instances**: 60-90% cheaper. Requires fault-tolerant training (checkpointing).
-    *   **Inference**: Continuous batching (vLLM) to saturate GPUs.
+*   **Cost Optimization (FinOps)**:
+    *   **Spot Instances**: 60-90% cheaper. Requires fault-tolerant training (checkpointing to AWS S3 / GCS).
+    *   **Inference Optimization**: 
+        *   **Continuous Batching (vLLM)**: To saturation GPUs.
+        *   **Quantization (AWQ/GPTQ)**: Serve 70B models on single A100 instead of 2.
+    *   **MIG (Multi-Instance GPU)**: Slicing a big A100 into 7 smaller instances for smaller models.
+*   **Observability**:
+    *   **Tracing**: OTel (OpenTelemetry) to trace a request from API -> Vector DB -> LLM.
+    *   **Metrics**: Token throughput, Time to First Token (TTFT).
 
 ## 📚 Resources
 

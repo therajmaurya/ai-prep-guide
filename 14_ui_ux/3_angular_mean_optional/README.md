@@ -15,9 +15,9 @@ questions:
 
 ### Angular Implementation
 *   **Signals (v16+)**: A new reactive primitive for fine-grained reactivity.
-    *   **Writable Signals**: Create values that can be updated (`signal()`).
-    *   **Computed Signals**: Derive values automatically (`computed()`).
-    *   **Effects**: Run side-effects when signals change (`effect()`).
+    *   **Writable Signals**: Create values that can be updated (`signal(initialValue)`).
+    *   **Computed Signals**: Derive values automatically (`computed(() => count() * 2)`). Memoized lazily.
+    *   **Effects**: Run side-effects when signals change (`effect()`). useful for logging or syncing with `localStorage`.
     *   *Advantage*: Enables zoneless applications (eventually removing strict dependency on `zone.js`) and simpler state management than complex RxJS streams.
 *   **Standalone Components (v14+)**: The modern way to build Angular apps.
     *   No need for `NgModules`.
@@ -36,6 +36,11 @@ questions:
 *   **Change Detection**:
     *   **Default**: Checks entire tree on every event.
     *   **OnPush**: Only checks when `@Input` reference changes or async pipe emits. Critical for performance.
+
+### Best Practices for AI/MEAN Apps
+*   **Streaming Responses**: Use `fetch` with `ReadableStream` in a Service, then bridge it to an Observable or Signal for the UI to consume chunk-by-chunk.
+*   **Vector Search**: In MongoDB, use `$vectorSearch` (Atlas) for semantic search over embeddings.
+*   **Typing**: Strict `strict: true` in `tsconfig.json`. Use Zod for runtime validation of API responses.
 
 ### MEAN Stack Architecture
 *   **MongoDB (Database)**: NoSQL document store. Good for flexible schemas and rapid prototyping.

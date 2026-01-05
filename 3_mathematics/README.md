@@ -29,6 +29,11 @@ You don't need a Math PhD, but you can't be a Senior Principal Engineer if you t
 *   **Optimization**:
     *   **Convex vs Non-Convex**: Local minima vs Saddle points.
     *   **Optimizers**: SGD, Momentum, RMSProp, Adam, AdamW (weight decay separation).
+    *   **Lagrange Multipliers**: Method for finding local maxima/minima subject to equality constraints (Basis of SVM dual formulation).
+*   **Information Theory**:
+    *   **Entropy**: Measure of uncertainty. $H(X) = - \sum p(x) \log p(x)$.
+    *   **KL Divergence**: $D_{KL}(P || Q)$. The "distance" between two distributions.
+    *   **Mutual Information**: $I(X;Y)$. reduction in uncertainty about X given Y. Crucial for Feature Selection.
 
 ## 📚 Resources
 

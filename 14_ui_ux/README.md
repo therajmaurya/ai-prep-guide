@@ -15,15 +15,24 @@ questions:
 
 Building the model is half the battle. If the user interaction is clunky, the AI feels broken.
 
-*   **Streaming & Latency**: LLMs are slow. Streaming tokens (SSE) makes the application feel responsive.
-*   **Uncertainty & Trust**: UI should communicate confidence. Use color coding or "I don't know" responses instead of hallucinations.
-*   **Control Mechanisms**: Sliders for creativity (Temperature), "Stop Generating" buttons.
-*   **Feedback Loops**: Thumbs up/down, "Regenerate", and implicit feedback (dwell time) to improve the model.
+*   **Streaming & Latency**: LLMs are slow (Time to First Token matters). Streaming tokens (Server-Sent Events) makes the application feel responsive. Use **skeletons** and **optimistic UI** updates.
+*   **Uncertainty & Trust**: UI should communicate confidence. Use color coding or "I don't know" responses instead of hallucinations. Cite sources (citations) where possible.
+*   **Control Mechanisms**: Sliders for creativity (Temperature), "Stop Generating" buttons. "Edit" previous user messages to branch conversations.
+*   **Feedback Loops**: Thumbs up/down, "Regenerate", and implicit feedback (dwell time, copy to clipboard) to improve the model (RLHF data collection).
+*   **Multimodality**: Handling drag-and-drop for images/PDFs, recording voice inputs, and rendering charts/code blocks.
+
+## 🧰 Tools & Libraries
+
+*   **Vercel AI SDK**: The industry standard for building AI-powered user interfaces in React/Next.js/Vue/Svelte. Handles streaming, state, and tool calling abstraction.
+*   **Gradio / Streamlit**: Rapid prototyping tools for Python engineers. Good for internal tools, bad for consumer apps.
+*   **v0.dev**: Generative UI tool to quickly scaffold frontend components.
+*   **Shadcn/UI**: Components often used in modern AI apps (clean, darker aesthetic).
 
 ## 📚 Resources
 
 *   [**Google People + AI Guidebook**](https://pair.withgoogle.com/guidebook/) - The gold standard for AI UX design.
 *   [**Microsoft HAX Toolkit**](https://www.microsoft.com/en-us/research/project/hax-toolkit/) - Guidelines for Human-AI Interaction.
+*   [**Vercel AI SDK Docs**](https://sdk.vercel.ai/docs) - Learn how to implement streaming.
 
 ## 🛠️ Practice
 
@@ -43,7 +52,12 @@ Visualization dashboard for a classification model.
 
 ### Senior-Level
 *   **Q**: Design the UX for a Copilot. How do you integrate it without being intrusive?
-*   **A**: Use "Ghost text" (gray text ahead of cursor) that can be accepted with Tab. Avoid popups that steal focus. Allow easy dismissal (Esc).
+*   **A**: Use "Ghost text" (gray text ahead of cursor) that can be accepted with Tab. Avoid popups that steal focus. Allow easy dismissal (Esc). implement "debounce" to avoid fetching suggestions on every keystroke.
+*   **Q**: How do you handle "Hallucinations" in the UI?
+*   **A**: 
+    1.  **Citations**: Link to the source document (RAG).
+    2.  **Confidence Scores**: Show low confidence warnings.
+    3.  **User Feedback**: Easy way to flag incorrect answers.
 
 ### Principal-Level
 *   **Q**: Determining "Intent". How should the UI adapt when the user's intent is ambiguous?

@@ -24,6 +24,16 @@ Designing systems for Agents is fundamentally different from standard microservi
     *   **Router**: A central "Brain" decides which sub-agent to call.
     *   **State Machine (Graph)**: Define explicit nodes and edges (LangGraph). Best for controlling complex flows to avoid "going off the rails".
     *   **Swarm**: Decentralized agents broadcasting messages (Actor Model).
+    *   **Reflection**: Agent critiques its own output before maximizing quality.
+    *   **Planning**:
+        *   **ReAct**: Reason, Act, Reason.
+        *   **Tree of Thoughts (ToT)**: Explore multiple reasoning branches.
+
+### 4. Evaluation Frameworks
+How do you measure a non-deterministic agent?
+*   **LLM-as-a-Judge**: Use a stronger model (GPT-4) to grade the traces of a smaller agent.
+*   **RAGAS**: Measures retrieval quality.
+*   **Trajectory Evaluation**: Measuring if the agent took the optimal path (fewest steps) to the solution.
 
 ## 📚 Resources
 

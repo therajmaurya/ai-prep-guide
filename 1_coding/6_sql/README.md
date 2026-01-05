@@ -64,6 +64,17 @@ SELECT * FROM RegionalSales WHERE total_sales > 100000;
     *   **Clustered Index**: Sorts the actual data rows on disk. Only one per table.
 *   **Partitioning**: Splitting a large table into smaller pieces (e.g., by date) to speed up queries.
 
+### 2. SQL for AI (Vector Search)
+Modern SQL databases (PostgreSQL) now support vector search.
+*   **`pgvector`**: Extension for storing embeddings.
+*   **Distance Metrics**: L2 (Euclidean), Cosine Similarity, Inner Product.
+*   **Indexing**: IVFFlat or HNSW (Hierarchical Navigable Small Worlds) for Approximate Nearest Neighbor (ANN) search inside a standard SQL DB.
+    ```sql
+    SELECT * FROM item_embeddings 
+    ORDER BY embedding <=> '[0.1, 0.3, ...]' 
+    LIMIT 5;
+    ```
+
 ### 2. ACID Properties
 Transactions must be ACID to ensure data integrity.
 *   **Atomicity**: All or nothing.

@@ -20,6 +20,10 @@ Training modern LLMs on a single GPU is impossible. Distributed training is the 
     *   **Data Parallel (DDP)**: Replicate model, split data. Synchronize gradients.
     *   **Model Parallel (Tensor/Pipeline)**: Split model options across GPUs (Tensor Parallel) or split layers (Pipeline Parallel).
     *   **Zero Redundancy (ZeRO/FSDP)**: Shard optimizer states, gradients, and parameters across GPUs to save memory.
+        *   **Stage 1**: Shard Optimizer States (4x memory reduction).
+        *   **Stage 2**: Shard Gradients (8x memory reduction).
+        *   **Stage 3**: Shard Parameters (Linear memory reduction with N GPUs). Allows fitting MASSIVE models.
+        *   **Offload**: CPU Offload (move data to RAM) to fit even bigger models.
 *   **Hardware**: NVLink, InfiniBand, RDMA (Remote Direct Memory Access) to bypass CPU.
 *   **Consistency Models**: Synchronous (SGD) vs Asynchronous (Parameter Server).
 

@@ -20,6 +20,12 @@ Reading papers is a skill. Don't read linearly.
 4.  **Pass 4**: Reproducing results.
 5.  **Pass 5**: Keeping up with ArXiv / Google Scholars (to stay updated using citations to move forward and backward in time).
 
+### Building a Mental Map (Knowledge Graph)
+Don't just collect PDFs. Build a graph of concepts.
+*   **Nodes**: Concepts (e.g., "Attention", "Residual Connection", "DPO").
+*   **Edges**: Relationships (e.g., "Attention **replaces** RNNs", "DPO **optimizes** RLHF").
+*   **Activity**: When reading a new paper, trace its "Ancestors" (what it builds on) and "Descendants" (what improves it).
+
 ## 🏆 The "Must Read" List
 
 ### Architecture

@@ -103,6 +103,17 @@ Crucial for data loading and serving models.
 *   **Definition**: Classes are instances of metaclasses (default is `type`).
 *   **Usage**: Intercepting class creation. Used in ORMs (Django, SQLAlchemy) and API frameworks (Pydantic, FastAPI) to validate class attributes or auto-generate code based on type hints.
 
+### 4. Modern Python Ecosystem
+AI Engineering requires robust, typed code.
+*   **Type Hinting**: 
+    *   Use `typing.List`, `typing.Optional`, `typing.Callable` (or standard collections in Python 3.9+).
+    *   **Pydantic**: Data validation using python type hints. The backbone of most AI agents/tools.
+*   **Packaging**:
+    *   **`uv`**: An extremely fast Python package installer and resolver, written in Rust. Replaces pip/poetry for many.
+    *   **`poetry`**: Dependency management with lockfiles (`poetry.lock`).
+*   **Linting/Formatting**:
+    *   **`ruff`**: An extremely fast Python linter and formatter, written in Rust. Replaces flake8, black, isort.
+
 ## Interview Questions
 
 ### Mid Level

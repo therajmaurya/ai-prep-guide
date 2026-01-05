@@ -1,0 +1,3 @@
+- Mind-map (Graph) of all the techniques explored while going through Research Papers.
+- Any new paper we read, building blocks (cited concepts) are the nodes of this graph.
+- When we read more papers, we update this graph.

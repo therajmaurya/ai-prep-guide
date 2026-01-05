@@ -26,7 +26,14 @@ As models get bigger (black boxes), understanding *why* they make a prediction b
     *   **Grad-CAM**: For CNNs. Visualizes which parts of the image (heatmap) activated the final class.
     *   **Saliency Maps**: For CNNs. Visualizes which parts of the image (heatmap) activated the final class.
 *   **Counterfactual Explanations**: Instead of asking "Why Y?", ask "What is the smallest change to X that would change Y to Y'?".
+*   **Counterfactual Explanations**: Instead of asking "Why Y?", ask "What is the smallest change to X that would change Y to Y'?".
 *   **Concept Bottleneck Models**: Explicitly predicting intermediate human-readable concepts (e.g., "Has Wing" -> "Is Bird") before the final prediction.
+
+### 4. LLM Interpretability (Mechanistic Interpretability)
+*   Treating NN as a compilable computer program.
+*   **Induction Heads**: Attention heads that look at previous token to predict next token (copying mechanism).
+*   **Superposition**: Storing more features than neurons by using non-orthogonal bases.
+*   **Dictionary Learning**: Using Sparse Autoencoders (SAE) to disentangle "polysemantic" neurons into single concepts.
 
 ## 📚 Resources
 

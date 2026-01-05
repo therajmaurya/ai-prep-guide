@@ -68,6 +68,11 @@ b = np.array([10, 20, 30])           # Shape (3,) -> (1, 3) via Rule 1
 *   **Matmul**: `a @ b` or `np.matmul(a, b)`. Preferred for 3D+ arrays (treats them as stacks of matrices).
 *   **Decompositions**: `np.linalg.svd`, `np.linalg.eig`, `np.linalg.cholesky`.
 *   **Solving Systems**: `np.linalg.solve(A, b)` is numerically more stable than `inv(A) @ b`.
+*   **Einsum (`np.einsum`)**: The swiss-army knife of tensor operations. It uses the Einstein Summation Convention.
+    *   `np.einsum('ij,jk->ik', A, B)`: Matrix multiplication.
+    *   `np.einsum('ii->', A)`: Trace.
+    *   `np.einsum('ij->j', A)`: Column sum.
+    *   *Why?* Often faster and more readable for complex high-dimensional tensor contractions (like in Multi-Head Attention types).
 
 ### 3. Performance Optimization
 *   **Vectorization**: Replacing explicit loops with array expressions. Pushes loops to C level.
@@ -115,3 +120,6 @@ b = np.array([10, 20, 30])           # Shape (3,) -> (1, 3) via Rule 1
     *   *Discussion*: Using `numba.vectorize` or writing a C extension (using NumPy C API) to create a ufunc that runs at C-speed and supports broadcasting.
 4.  **How would you implement a rolling window average efficiently in NumPy without loops?**
     *   *Discussion*: Use `np.lib.stride_tricks.as_strided` to create a view of the array with a new shape (windows) without copying data, then take the mean. Or use `np.convolve`.
+    
+3.  **Explain the Einstein Summation convention.**
+    *   *Discussion*: It is a notation for expressing summations. In `einsum`, repeated indices implies summation. It allows representing dot products, outer products, transposes, and more in a compact string format, optimized by the library.

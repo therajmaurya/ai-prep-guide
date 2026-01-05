@@ -63,6 +63,10 @@ __global__ void add(int *a, int *b, int *c, int n) {
 *   **Concurrency**: Operations in *different* streams can run concurrently (e.g., copy data while computing).
 *   **Events**: Synchronization points to measure time or coordinate streams.
 
+### 5. Profiling & Optimization Metrics
+*   **Occupancy**: The ratio of active warps to maximum supported warps on an SM. Higher occupancy hides memory latency (one warp waits, another executes).
+*   **NVTX (NVIDIA Tools Extension)**: Annotate your code with ranges and markers to see them in Nsight Systems profiler. Useful to correlate CPU PyTorch calls with GPU kernels.
+
 ## Interview Questions
 
 ### Senior Level

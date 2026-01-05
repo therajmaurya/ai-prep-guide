@@ -2,16 +2,16 @@
 title: "Metrics and Evaluations"
 category: ml
 levels: ["mid", "senior", "principal"]
-skills: [metrics, evaluation, ab-testing]
+skills: [metrics, evaluation, ab-testing, accuracy, f1-score, ndcg, perplexity, rouge, bleu, llm-evals]
 questions:
-  "mid": ["Difference between Precision and Recall.", "What is F1 Score?", "Explain RMSE vs MAE."]
-  "senior": ["Explain ROC-AUC and PR-AUC.", "What is LogLoss (Cross-Entropy)?", "How to evaluate a RAG system?"]
-  "principal": ["Discuss metrics for Generative AI (FID, BLEU, ROUGE).", "How to handle offline vs online metric mismatch?", "Design a composite metric for user satisfaction."]
+  "mid": ["Difference between Precision and Recall.", "What is F1 Score?", "Explain RMSE vs MAE.", "Explain the Precision-Recall trade-off."]
+  "senior": ["Explain ROC-AUC and PR-AUC.", "What is LogLoss (Cross-Entropy)?", "How to evaluate a RAG system?", "Explain NDCG."]
+  "principal": ["Discuss metrics for Generative AI (FID, BLEU, ROUGE).", "How to handle offline vs online metric mismatch?", "Design a composite metric for user satisfaction.", "Design a human-in-the-loop evaluation pipeline for a code generation model."]
 ---
 
 # Metrics and Evaluations
 
-"You can't improve what you don't measure." Choosing the right metric is often more important than choosing the right model.
+"You can't improve what you don't measure." Choosing the right metric is often more important than choosing the right model. In AI, picking the wrong metric leads to optimizing for the wrong thing.
 
 ## Core Concepts
 
@@ -30,6 +30,7 @@ questions:
 ### 3. Ranking Metrics
 *   **MRR (Mean Reciprocal Rank)**: Rank of the first relevant item.
 *   **NDCG (Normalized Discounted Cumulative Gain)**: Accounts for position and relevance score. Standard for Search/RecSys.
+*   **MAP (Mean Average Precision)**: Focuses on precision at all levels of recall.
 
 ## Advanced Topics
 
@@ -40,19 +41,44 @@ questions:
 *   **PR-AUC**: Area Under Precision-Recall Curve. Better than ROC for extremely imbalanced datasets (needle in haystack).
 
 ### 2. Generative AI Metrics
-*   **NLP (Text)**:
+*   **NLP (Text - N-gram based)**:
     *   **BLEU**: N-gram overlap precision. Used for Translation.
     *   **ROUGE**: N-gram overlap recall. Used for Summarization.
     *   **Perplexity**: Exponentiated Cross-Entropy. How surprised the model is by the text.
+*   **NLP (Model-based & Semantics)**:
+    *   **BERTScore**: Computes similarity using contextual embeddings.
+    *   **LLM-as-a-Judge**: Using stronger models (e.g., GPT-4) to score outputs from smaller models (e.g., Llama-2).
 *   **Vision (Images)**:
     *   **FID (Fréchet Inception Distance)**: Measures distance between feature distributions of real and generated images. Lower is better.
     *   **IS (Inception Score)**: Measures quality and diversity.
 
 ### 3. RAG Evaluation
-*   **RAGAS**: Framework for evaluating RAG.
+*   **RAGAS**: Framework for evaluating RAG pipelines.
     *   **Faithfulness**: Is the answer derived from the context?
     *   **Answer Relevance**: Does the answer address the query?
     *   **Context Precision**: Is the retrieved context relevant?
+    *   **Context Recall**: Is the relevant context retrieved?
+
+
+## 📚 Resources
+
+*   [**Scikit-Learn Metrics**](https://scikit-learn.org/stable/modules/model_evaluation.html) - Documentation.
+*   [**RAGAS**](https://github.com/explodinggradients/ragas) - Framework for evaluating RAG pipelines.
+*   [**HuggingFace Evaluate**](https://huggingface.co/docs/evaluate/index) - Library for metric calculation.
+
+## 🛠️ Practice
+
+### Project 1: Balanced Metrics
+Train a classifier on a highly imbalanced dataset (e.g., Credit Card Fraud, 99.9% legit).
+*   **Goal**: Show that Accuracy is 99.9% but Recall is 0%. Fix it by optimizing for F1 or Recall@K.
+
+### Project 2: LLM Evaluation Bench
+Use `RAGAS` to evaluate a simple Wiki-Chatbot.
+*   **Goal**: Generate a synthetic test set (Questions, Ground Truths) and run evaluation metrics.
+
+### Project 3: Fairness Audit
+Take a pre-trained model (e.g., for hiring or credit scoring) and run an error analysis on different subgroups (gender, age).
+*   **Goal**: Calculate "Demographic Parity" and "Equalized Odds" metrics. Propose a mitigation strategy (re-weighting or post-processing).
 
 ## Interview Questions
 
@@ -63,6 +89,10 @@ questions:
     *   *Answer*: Random guessing. The model has no discriminative power.
 3.  **Why is RMSE sensitive to outliers?**
     *   *Answer*: Because it squares the errors. An error of 10 becomes 100. An error of 0.1 becomes 0.01.
+4.  **Explain the Precision-Recall trade-off.**
+    *   *Answer*: Increasing threshold increases Precision (fewer FPs) but decreases Recall (more FNs). Decreasing threshold increases Recall but decreases Precision. You can't usually maximize both simultaneously.
+5.  **When is Accuracy a bad metric?**
+    *   *Answer*: When classes are imbalanced. If 90% of patients are healthy, a model that predicts "Healthy" for everyone has 90% accuracy but is useless.
 
 ### Senior Level
 1.  **Explain the difference between Micro-F1 and Macro-F1.**
@@ -71,6 +101,8 @@ questions:
     *   *Answer*: Accuracy is a step function (not differentiable). LogLoss is smooth and convex (differentiable), providing a gradient for optimization. It also quantifies *confidence*.
 3.  **What are the limitations of BLEU score?**
     *   *Answer*: It only measures n-gram overlap. It doesn't capture semantic meaning, synonyms, or fluency. "The cat sat on the mat" and "Mat the sat cat on the" might have similar BLEU scores.
+4.  **Explain NDCG (Normalized Discounted Cumulative Gain).**
+    *   *Answer*: Used in ranking. "Cumulative Gain" sums the relevance of results. "Discounted" penalizes relevant results if they appear lower down the list. "Normalized" divides by the ideal ranking (IDCG) so the score is between 0 and 1.
 
 ### Principal Level
 1.  **How do you handle the mismatch between Offline Metrics (AUC) and Online Metrics (Click-Through Rate)?**
@@ -79,3 +111,9 @@ questions:
     *   *Discussion*: Intra-List Similarity (ILS). Average cosine similarity between all pairs of items in the recommendation list. We want to minimize ILS (maximize diversity) without sacrificing relevance.
 3.  **Explain FID (Fréchet Inception Distance) mathematically.**
     *   *Discussion*: It assumes features (from InceptionV3 pool3 layer) follow a multidimensional Gaussian. $FID = ||\mu_r - \mu_g||^2 + Tr(\Sigma_r + \Sigma_g - 2(\Sigma_r \Sigma_g)^{1/2})$. Measures distance between Real ($\mu_r, \Sigma_r$) and Generated ($\mu_g, \Sigma_g$) distributions.
+4.  **We are launching a code generation assistant. How do we know it's "Good"?**
+    *   *Discussion*: 
+        1.  **Pass@k**: Can the generated code pass unit tests? (HumanEval benchmark).
+        2.  **Productivity Metric**: Acceptance rate of suggestions in IDE.
+        3.  **Latency**: Time to first token.
+        4.  **Qualitative**: AB testing with developer focus groups.

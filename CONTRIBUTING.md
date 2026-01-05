@@ -1,65 +1,78 @@
 # Contributing to AI Prep Guide
 
-Thank you for your interest in contributing! This guide details how to structure your contributions to ensure high quality and consistency.
+First off, thanks for taking the time to contribute! :tada:
 
-## Core Principles
+The goal of this repository is to create the most comprehensive, structured, and high-quality preparation guide for Senior+ AI/ML engineers. We value your expertise and help.
 
-1.  **Structured Metadata**: Every topic must have YAML frontmatter.
-2.  **Experience Levels**: Content should be tagged with appropriate experience levels (`mid`, `senior`, `principal`).
-3.  **Actionable**: Focus on "Core Ideas", "Resources", and "Practice".
+## Code of Conduct
 
-## Topic File Structure
+This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-Every topic file (e.g., `README.md` in a topic folder) must start with this frontmatter:
+## How Can I Contribute?
+
+### Reporting Bugs
+This section guides you through submitting a bug report for the AI Prep Guide. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+
+*   **Use a clear and descriptive title** for the issue to identify the problem.
+*   **Describe the exact steps which reproduce the problem** in as much detail as possible.
+*   **Explain which behavior you expected to see instead and why.**
+
+### Suggesting Enhancements
+This section guides you through submitting an enhancement suggestion for the AI Prep Guide, including completely new topics and minor improvements to existing functionality.
+
+*   **Use a clear and descriptive title** for the issue to identify the suggestion.
+*   **Provide a step-by-step description of the suggested enhancement** in as much detail as possible.
+*   **Explain why this enhancement would be useful** to most AI Prep Guide users.
+
+### Pull Requests
+
+The process is straightforward:
+
+1.  **Fork** the repo on GitHub.
+2.  **Clone** the project to your own machine.
+3.  **Create a branch** for your edit/addition: `git checkout -b topic/my-new-topic`.
+4.  **Commit** changes to your own branch.
+5.  **Push** your work back to your fork.
+6.  **Submit a Pull Request** so that we can review your changes.
+
+## Content Standards & Style Guide
+
+### Topic Structure (The "Golden Rule")
+
+Every topic `README.md` **MUST** begin with the following YAML frontmatter:
 
 ```yaml
 ---
 title: "Topic Name"
-category: must  # or good-to-know, specialisation
-levels: ["mid", "senior", "principal"] # Select applicable
-skills: [skill-1, skill-2]
+category: must  # Options: must, good-to-know, specialisation
+levels: ["mid", "senior", "principal"] # Select all that apply
+skills: [skill-keyword-1, skill-keyword-2]
 questions:
-  "mid": ["Example mid-level question?"]
-  "senior": ["Example senior-level question?"]
-  "principal": ["Example principal-level question?"]
+  "mid": ["Example question suitable for mid-level?"]
+  "senior": ["Example question suitable for senior-level?"]
+  "principal": ["Example question suitable for principal-level?"]
 ---
 ```
 
-### Sections
+### Markdown Style
 
-After the frontmatter, include the following sections:
+*   **Headings**: Use `#` for the main title (only one per file), `##` for major sections, `###` for subsections.
+*   **Lists**: Use hyphens `-` for unordered lists and numbers `1.` for ordered lists.
+*   **Code**: Use **fenced code blocks** with language headers for all code snippets.
+    ```python
+    def example():
+        return "Like this!"
+    ```
+*   **Links**: Use relative links for internal navigation `[link text](../folder/file.md)`.
 
-```markdown
-# Topic Name
+### New Topic Checklist
 
-## Core Ideas
-- Key concept 1
-- Key concept 2
+When adding a new topic, ensure you include:
+1.  [ ] **Core Ideas**: Bullet points summarizing the key concepts.
+2.  [ ] **Resources**: 3-5 high-quality links (papers, blogs, courses).
+3.  [ ] **Practice**: Concrete exercises or mini-projects.
+4.  [ ] **Questions**: At least one interview question per experience level.
 
-## Resources
-- [Resource Name](url) - Brief description
+## Community
 
-## Practice
-- Exercise 1
-- Exercise 2
-
-## Questions
-### Mid Level
-- Question...
-
-### Senior Level
-- Question...
-```
-
-## Pull Request Process
-
-1.  Fork the repository.
-2.  Create a branch: `topic/your-topic-name`.
-3.  Add your content following the structure above.
-4.  Open a PR and tag maintainers.
-
-## Style Guide
-
-- Use clear, concise English.
-- Prefer bullet points over long paragraphs.
-- Link to official documentation where possible.
+If you have questions, feel free to open a [Discussion](https://github.com/therajmaurya/ai-prep-guide/discussions) (if enabled) or an Issue with the `question` label.

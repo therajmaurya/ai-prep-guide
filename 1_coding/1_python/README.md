@@ -1,30 +1,12 @@
 ---
 title: "Python for AI/ML"
 category: coding
-levels:
-  - "mid"
-  - "senior"
-  - "principal"
-skills:
-  - "python"
-  - "data-structures"
-  - "algorithms"
-  - "performance-optimization"
-  - "concurrency"
-  - "internals"
+levels: ["mid", "senior", "principal"]
+skills: ["python", "data-structures", "algorithms", "performance-optimization", "concurrency", "internals"]
 questions:
-  mid:
-    - "Explain list comprehensions vs generators."
-    - "What is a decorator?"
-    - "Difference between `is` and `==`."
-  senior:
-    - "How does Python's GIL affect multi-threaded ML data loading?"
-    - "Explain the difference between `__new__` and `__init__`."
-    - "How does garbage collection work in Python?"
-  principal:
-    - "Design a plugin system using Python's dynamic features."
-    - "Optimize a memory-intensive Python application."
-    - "Compare `multiprocessing` vs `asyncio` for an ML inference service."
+  mid: ["Explain list comprehensions vs generators.", "What is a decorator?", "Difference between `is` and `==`."]
+  senior: ["How does Python's GIL affect multi-threaded ML data loading?", "Explain the difference between `__new__` and `__init__`.", "How does garbage collection work in Python?"]
+  principal: ["Design a plugin system using Python's dynamic features.", "Optimize a memory-intensive Python application.", "Compare `multiprocessing` vs `asyncio` for an ML inference service."]
 ---
 
 # Python for AI/ML Interviews

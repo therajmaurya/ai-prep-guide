@@ -1,5 +1,5 @@
 ---
-{
+{{
 title: "Python for AI/ML",
 category: coding,
 levels: ["mid", "senior", "principal"],
@@ -9,7 +9,7 @@ questions: {
   "senior": ["How does Python's GIL affect multi-threaded ML data loading?", "Explain the difference between `__new__` and `__init__`.", "How does garbage collection work in Python?"],
   "principal": ["Design a plugin system using Python's dynamic features.", "Optimize a memory-intensive Python application.", "Compare `multiprocessing` vs `asyncio` for an ML inference service."]
 }
-}
+}}
 ---
 
 # Python for AI/ML Interviews
